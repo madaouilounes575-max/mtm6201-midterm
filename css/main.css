@@ -20,7 +20,23 @@ min-height: 400px;
 /* adding space on the top and the the botom and the left and right 
 will makes the design claener*/
 padding: 40px 20px;
+
 } 
+nav a {
+color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Smooth golden-yellow hover effect for navigation links */
+nav a {
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #d69e3d;
+}
 
 nav ul {
     display: flex;
@@ -57,6 +73,7 @@ margin-right: auto;
 }
 /* it looks like a button . yay*/
 .hero .btn {
+transition: background-color 0.3s ease;
 background-color: #ffffff;
 color: #000000;
 padding: 15px 25px;
@@ -64,6 +81,14 @@ text-decoration: none;
 text-transform: uppercase;
 font-weight: bold;
 align-self: center;
+
+}
+/* adding the golden hover, actiolly i forget to add it till now */
+.hero .btn:hover,
+.hero .btn:focus-visible {
+background-color: #d69e3d;
+color: #000000;
+border: 2px solid #ffffff;
 }
 /* i am hiding  the skip link until a keyboard user focuses on it */
 .skip-link {
@@ -81,21 +106,143 @@ z-index: 1000;
 }
 /* controls the logo size */
 header img {
-    width: 180px;
-    height: auto;
+width: 180px;
+height: auto;
 }
 /* separating the welcome sec and hero sec with some light backgroundI  */
+/* Adds space inside the welcome section */
 .welcome {
-    background-color: #f3f0e9;
+background-color: #f3f0e9;
+padding: 40px 20px;
 }
-/* Styles the welcome heading for mobile */
+/* styles the welcome heading for mobile */
 .welcome h2 {
-    font-size: 28px;
-    line-height: 1.2;
-    margin-bottom: 20px;
+font-size: 28px;
+line-height: 1.2;
+margin-bottom: 20px;
 }
-/* Adds comfortable spacing between lines in the welcome paragraph */
+/* adds comfortable spacing between lines in the welcome paragraph */
 .welcome p {
-    line-height: 1.6;
-    margin-bottom: 20px;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+/* capital latters the size and golden color, thats all i need for this section */
+.section-label {
+color: #d69e3d;
+text-transform: uppercase;
+font-size: 14px;
+margin-bottom: 5px;
+}
+/* makes the coffee gallery images fit the mobile screen */
+.coffee-gallery img {
+width: 100%;
+height: auto;
+display: block;
+}
+/* i am arranging the images to fit the mobile and looks like the assigment . finally */
+.coffee-gallery {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+}
+/* makes the first photo take both columns */
+.coffee-gallery img:first-child {
+grid-column: span 2;
+}
+/* centering and soacing the Why Visit Us section on mobile, done */
+.why-visit {
+background-color: #f3f0e9;
+padding: 50px 20px;
+text-align: center;
+}
+/* Makes the Why Visit Us heading larger and easier to read */
+.why-visit h2 {
+font-size: 28px;
+line-height: 1.2;
+text-transform: uppercase;
+margin-bottom: 30px;
+}
+/* spacing around each feature in the Why Visit Us section */
+.feature {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+/* centering the svgs and making them the same size */
+.feature img {
+width: 100px;
+height: 100px;
+object-fit: contain;
+display: block;
+ margin: 0 auto 15px;
+}
+/* makes the feature headings match the reference design */
+.feature h3 {
+font-size: 22px;
+text-transform: uppercase;
+margin-top: 10px;
+margin-bottom: 5px;
+}
+/* keeps the feature descriptions readable and centered */
+.feature p {
+font-size: 14px;
+line-height: 1.5;
+max-width: 320px;
+margin: 0 auto;
+}
+/* adds the coffee shop photo behind the menu section */
+.our-menu {
+background-image: linear-gradient(
+rgba(0, 0, 0, 0.6),
+rgba(0, 0, 0, 0.6)
+), url("../images/coffee-shop.jpeg");
+
+background-size: cover;
+background-position: center;
+text-align: center;
+padding: 60px 20px;
+color: white;
+}
+/* white menu button with a smooth golden-yellow hover effect. */
+.menu-btn {
+display: inline-block;
+background-color: #ffffff;
+color: #000000;
+border: 2px solid #ffffff;
+padding: 15px 25px;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+margin-top: 20px;
+transition: background-color 0.3s ease;
+}
+.menu-btn:hover,
+.menu-btn:focus-visible {
+background-color: #d69e3d;
+color: #000000;
+}
+/* Styles the locations button with a transparent background */
+.locations-btn {
+display: inline-block;
+color: #ffffff;
+background-color: transparent;
+border: 2px solid #ffffff;
+padding: 15px 25px;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+margin-top: 20px;
+}
+/* Smooth golden-yellow hover effect for the locations button */
+.locations-btn {
+    transition: background-color 0.3s ease;
+}
+
+.locations-btn:hover,
+.locations-btn:focus-visible {
+    background-color: #d69e3d;
+    color: #000000;
+}
+/* Separates the menu and locations content for better readability */
+.locations {
+    margin-top: 80px;
 }
