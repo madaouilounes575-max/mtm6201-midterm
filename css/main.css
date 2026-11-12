@@ -39,17 +39,17 @@ nav a:focus-visible {
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
+display: flex;
+justify-content: center;
+gap: 20px;
+list-style: none;
+padding: 0;
 }
 /* i am making the navigation links white and removes the underline */
 nav a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
+color: #ffffff;
+text-decoration: none;
+text-transform: uppercase;
 }
 /* just adjusting the heading for the mobile */
 .hero h1 {
@@ -239,10 +239,244 @@ margin-top: 20px;
 
 .locations-btn:hover,
 .locations-btn:focus-visible {
-    background-color: #d69e3d;
-    color: #000000;
+background-color: #d69e3d;
+color: #000000;
 }
 /* Separates the menu and locations content for better readability */
 .locations {
-    margin-top: 80px;
+margin-top: 80px;
+}
+/* about us image will fit the mobile screen yay*/
+.about-us img {
+width: 100%;
+height: auto;
+display: block;
+}
+/* Adds a light beige background and spacing to the About Us section */
+.about-us {
+background-color: #f3f0e9;
+padding: 40px 20px;
+}
+/* Makes the About Us heading match the reference design */
+.about-us h2 {
+font-size: 28px;
+text-transform: uppercase;
+line-height: 1.2;
+margin-top: 5px;
+margin-bottom: 15px;
+}
+/* Black button with white text to match the About Us reference */
+.about-btn {
+display: inline-block;
+background-color: #000000;
+color: #ffffff;
+padding: 15px 25px;
+margin-top: 15px;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+transition: background-color 0.3s ease;
+}
+
+/* Changes the button to golden yellow on hover or keyboard focus */
+.about-btn:hover,
+.about-btn:focus-visible {
+background-color: #d69e3d;
+color: #000000;
+}
+/* Makes the About Us story easier to read on mobile */
+.about-us p:not(.section-label) {
+line-height: 1.5;
+margin-bottom: 15px;
+}
+/* Dark background and spacing for customer testimonials */
+.testimonials {
+background-color: #000000;
+color: #ffffff;
+padding: 60px 20px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+/* Adds the first customer photo with a dark overlay for readable text */
+.testimonial {
+background-image: linear-gradient(
+rgba(0, 0, 0, 0.4),
+rgba(0, 0, 0, 0.4)
+ ), url("../images/testimonial-1.jpeg");
+background-size: cover;
+background-position: center;
+min-height: 350px;
+padding: 20px;
+justify-content: flex-end;
+display: flex;
+flex-direction: column;
+margin-bottom: 15px;
+}
+/* Makes customer names golden yellow to match the reference */
+.testimonial h3 {
+color: #d69e3d;
+text-transform: uppercase;
+font-size: 14px;
+margin-top: 5px;
+}
+/* Small white review text positioned near the bottom of the photo */
+.testimonial p {
+font-size: 14px;
+line-height: 1.4;
+margin: 0 0 5px;
+color: #ffffff;
+}
+/* Displays Scott's photo in the second testimonial */
+.testimonial-two {
+background-image: linear-gradient(
+rgba(0, 0, 0, 0.4),
+rgba(0, 0, 0, 0.4)
+), url("../images/testimonial-2.jpeg");
+min-height: 550px;
+}
+/* Displays Susie's photo in the third testimonial */
+.testimonial-three {
+background-image: linear-gradient(
+rgba(0, 0, 0, 0.4),
+rgba(0, 0, 0, 0.4)
+ ), url("../images/testimonial-3.jpeg");
+ min-height: 550px;
+}
+/* Dark footer with centered copyright information */
+.site-footer {
+background-color: #000000;
+color: #ffffff;
+text-align: center;
+padding: 20px;
+}
+
+/* Removes extra spacing around the copyright text */
+.site-footer p {
+margin: 0;
+font-size: 14px;
+}
+/* pass to the tablet styles for screens 768px and wider */
+@media screen and (min-width: 768px) {
+/* this is just to make coffee gallery match the tablet screen */
+.coffee-gallery {
+    grid-template-columns: repeat(4, 1fr);
+}
+/* the first photo is larger according to the assigment */
+.coffee-gallery img:first-child {
+grid-column: span 2;
+grid-row: span 2; 
+}
+/* used AI to help me understand how to arrange the features
+   in a responsive grid for tablet screens. i didnt 
+   find really what is the problem */
+/* Tablet layout: two features on top */
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+/* Center the third feature underneath */
+.feature:last-child {
+    grid-column: 1 / -1;
+    max-width: 350px;
+    justify-self: center;
+}
+.why-visit {
+padding: 60px 40px;
+}
+/* location and our menu side by side yay */
+.our-menu {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+/* Remove mobile spacing between the two sections */
+.locations {
+margin-top: 0;
+}
+/* this add more spacing around about us image */
+.about-us {
+
+   padding: 60px 40px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 30px;
+   align-items: center;
+}
+/* arranging the customer reviews side by side to match the assigment*/
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+}
+/* Remove extra spacing between testimonial cards */
+.testimonial {
+ margin-bottom: 0;
+}    
+}
+/* finally desktop styles for screens 1100px and wider */
+@media screen and (min-width: 1100px) {
+    /* Center the content on desktop screens */
+.welcome,
+.why-visit,
+.about-us,
+.testimonials {
+padding-left: max(40px, calc((100% - 1100px) / 2));
+padding-right: max(40px, calc((100% - 1100px) / 2));
+}
+/* AI helped me position the logo and navigation
+   side by side for the desktop layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    flex-direction: row;
+}
+/* Keep navigation links beside each other */
+header nav ul {
+    display: flex;
+    gap: 25px;
+}
+/* Show all three coffee features in one row on desktop */
+.features {
+    grid-template-columns: repeat(3, 1fr);
+ 
+}
+/* Keep the third feature in its own column */
+.feature:last-child {
+    grid-column: auto;
+}
+/* Make the hero heading larger on desktop */
+.hero h1 {
+    font-size: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero {
+    min-height: 550px;
+}
+/* Make the hero paragraph wider on desktop */
+.hero p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Make the coffee gallery images fill their grid spaces */
+.coffee-gallery img {
+    height: 100%;
+    object-fit: cover;
+}
+/* Adjust the space between coffee photos on desktop */
+.coffee-gallery {
+    gap: 20px;
+}
+/* Keep all customer review photos the same height on desktop and beside each other */
+.testimonial {
+    height: 500px;
+    min-height: 0;
+    box-sizing: border-box;
+}
 }
